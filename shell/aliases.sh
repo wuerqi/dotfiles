@@ -7,4 +7,7 @@ alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls'
 
-
+# directory navigation
+alias ..='cd ..'
+alias ...='cd ..\..'
+alias ....='cd ..\..\..'
