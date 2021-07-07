@@ -91,9 +91,9 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 
 " CtrlP
-nnoremap ; :CtrlPBuffer<CR>
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_show_hidden = 1
+" nnoremap ; :CtrlPBuffer<CR>
+" let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_show_hidden = 1
 
 " Lose bad habits
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
