@@ -14,3 +14,19 @@
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 	ignore = untracked
+[submodule "vim/plugins/nerdtree"]
+	path = vim/plugins/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+	ignore = untracked
+[submodule "vim/plugins/vim-colors-solarized"]
+	path = vim/plugins/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+	ignore = untracked
+[submodule "vim/plugins/lightline.vim"]
+	path = vim/plugins/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+	ignore = untracked
+[submodule "vim/plugins/ctrlp.vim"]
+	path = vim/plugins/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+	ignore = untracked
