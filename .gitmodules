@@ -1,3 +1,4 @@
 [submodule "vim/plugins/vim-tmux"]
 	path = vim/plugins/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git
+	ignore = untracked
