@@ -2,3 +2,7 @@
 	path = vim/plugins/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git
 	ignore = untracked
+[submodule "shell/plugins/dircolors-solarized"]
+	path = shell/plugins/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+	ignore = untracked
