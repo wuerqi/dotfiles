@@ -60,6 +60,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" smart case-sensitive search
+set ignorecase
+set smartcase
+
 set mouse+=a        " enable mouse mode (scrolling, selection, etc)
 "---------------------
 " Misc configurations
