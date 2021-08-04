@@ -1,6 +1,22 @@
 " not vi compatible
 set nocompatible
 
+
+" set the runtime path to include Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle and initialize
+Plugin 'gmarik/Vundle.vim'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+
 "-------------------
 " Syntax and indent
 "-------------------
@@ -53,6 +69,7 @@ set hlsearch        " highlight search results
 set history=8192	" more history
 set noshowmode		" hide mode
 set laststatus=2	" enable status line
+set backspace=indent,eol,start " allow backspacing over everything
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -98,6 +115,15 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 " nnoremap ; :CtrlPBuffer<CR>
 " let g:ctrlp_switch_buffer = 0
 " let g:ctrlp_show_hidden = 1
+
+" YouCompleteMe
+nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>st :YcmCompleter GetType<CR>
+
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+
 
 " Lose bad habits
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
