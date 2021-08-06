@@ -30,3 +30,7 @@
 	path = vim/plugins/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
 	ignore = untracked
+[submodule "vim/plugins/LeaderF"]
+	path = vim/plugins/LeaderF
+	url = https://github.com/Yggdroot/LeaderF.git
+	ignore = untracked
