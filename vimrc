@@ -23,6 +23,14 @@ call vundle#end()
 syntax on
 set showmatch  " show matching braces when text indicator is over them
 
+augroup AutoMake
+    " Remove all auto-commands from the group AutoMake
+    autocmd! 
+
+"    autocmd BufWritePost *.c,*.cpp make
+"    autocmd QuickFixCmdPost * copen
+augroup END
+
 " highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
 	autocmd!
@@ -82,6 +90,11 @@ set ignorecase
 set smartcase
 
 set mouse+=a        " enable mouse mode (scrolling, selection, etc)
+
+" set shortmess+=F    " suppress 'Press Enter or type command ...' message
+
+" set statusline+=%{gutentags#statusline()}
+
 "---------------------
 " Misc configurations
 "---------------------
@@ -91,6 +104,9 @@ set mouse+=a        " enable mouse mode (scrolling, selection, etc)
 map <C-a> <Nop>
 map <C-x> <Nop>
 nmap Q    <Nop>
+
+" terminal window size
+set termwinsize=12x0
 
 " open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -117,12 +133,53 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 " let g:ctrlp_show_hidden = 1
 
 " YouCompleteMe
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_open_loclist_on_ycm_diags = 1         " Open location list to view diagnostics
+let g:ycm_enable_diagnostic_highlighting = 1    " Highlight regions of diagnostic text
+
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>st :YcmCompleter GetType<CR>
 
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+
+
+" Open vim-dispatch window and scroll to bottom
+nnoremap <C-m>m :Copen<CR> <bar> G
+
+" Build targets
+nnoremap <C-m>b :Dispatch! make -C build/<CR>
+
+
+" gutentags
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+
+let g:gutentags_ctags_extra_args  = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+if !isdirectory(s:vim_tags)
+    silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" lightline
+"   adding Git branch info in the left
+let g:lightline = {
+     \   'active': {
+     \     'left': [ ['mode', 'paste'],
+     \               ['gitbranch', 'readonly', 'filename', 'modified'] ]
+     \   },
+     \   'component_function': {
+     \     'gitbranch': 'FugitiveStatusline'
+     \   },
+     \ }
+
+
 
 
 " Lose bad habits
