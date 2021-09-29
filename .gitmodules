@@ -54,3 +54,6 @@
 	path = vim/plugins/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
 	ignore = untracked
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
