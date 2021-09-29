@@ -16,6 +16,7 @@ call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
+"autocmd VimEnter * ++nested colorscheme gruvbox
 
 "-------------------
 " Syntax and indent
@@ -38,9 +39,15 @@ augroup CursorLineOnlyInActiveWindow
 	autocmd WinLeave * setlocal nocursorline
 augroup END
 
+" open Tagbar automatically
+augroup OpenTagbarUponEnter
+    autocmd!
+    autocmd FileType python,c,cpp TagbarOpen
+augroup END
+
 if has('gui_running')
 "	echo "has gui_running"
-	colorscheme solarized
+	colorscheme gruvbox
 	let g:lightline = { 'colorscheme': 'solarized' }
 elseif &t_Co < 256
 "	echo "t_Co"
@@ -49,8 +56,12 @@ elseif &t_Co < 256
 else
 "	echo "t_Co = 256"
 	set background=dark
-	let g:solarized_termcolors=256  " instead of 16 color with mapping in terminal 
-	colorscheme solarized
+"	let g:solarized_termcolors=256  " instead of 16 color with mapping in terminal 
+"	colorscheme solarized
+    
+    let g:gruvbox_termcolors=256  " instead of 16 color with mapping in terminal 
+    colorscheme gruvbox
+    
 
 	" customized colors
 	highlight SignColumn ctermbg=234
@@ -160,8 +171,10 @@ let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 
 let g:gutentags_ctags_extra_args  = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+"let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+"let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--kinds-c++=+dfghmstuvcnZ', '--fields-c++=+{specialization}{template}{properties}{captures}']
+
 
 if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
