@@ -1,6 +1,8 @@
 " not vi compatible
 set nocompatible
 
+" change leader key as Space key
+let mapleader=" "
 
 " set the runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -130,6 +132,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" insert or command mode quicker movement
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+
+
 "----------------------
 " Plugin configuration
 "----------------------
@@ -151,6 +165,8 @@ let g:ycm_enable_diagnostic_highlighting = 1    " Highlight regions of diagnosti
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>st :YcmCompleter GetType<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
@@ -161,6 +177,9 @@ nnoremap <C-m>m :Copen<CR> <bar> G
 
 " Build targets
 nnoremap <C-m>b :Dispatch! make -C build/<CR>
+
+" Build arm targets
+nnoremap <C-m>ba :Dispatch! make -C build_arm/<CR>
 
 
 " gutentags
