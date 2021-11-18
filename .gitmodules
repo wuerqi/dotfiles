@@ -58,3 +58,6 @@
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 	ignore = untracked
+[submodule "vim/plugins/commentary"]
+	path = vim/plugins/commentary
+	url = https://github.com/tpope/vim-commentary.git

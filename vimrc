@@ -1,6 +1,9 @@
 " not vi compatible
 set nocompatible
 
+" per project local config
+set exrc
+
 " change leader key as Space key
 let mapleader=" "
 
@@ -173,14 +176,20 @@ nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 
 
 " Open vim-dispatch window and scroll to bottom
-nnoremap <C-m>m :Copen<CR> <bar> G
+nnoremap <leader>m :Copen<CR> <bar> G
 
 " Build targets
-nnoremap <C-m>b :Dispatch! make -C build/<CR>
+nnoremap <leader>b :Dispatch! make -C build/<CR>
 
 " Build arm targets
-nnoremap <C-m>ba :Dispatch! make -C build_arm/<CR>
+nnoremap <leader>ba :Dispatch! make -C build_arm/<CR>
 
+" temp
+" nnoremap <leader>z :Dispatch! /home/rafewu/TEMP/neighbour/run_device.sh<CR>
+
+" Insert a blank line before or after the current one
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
+nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
 
 " gutentags
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
