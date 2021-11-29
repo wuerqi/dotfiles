@@ -17,9 +17,13 @@ Plugin 'gmarik/Vundle.vim'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
+" vimspector
+Plugin 'puremourning/vimspector'
+
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "autocmd VimEnter * ++nested colorscheme gruvbox
 
@@ -35,6 +39,11 @@ augroup AutoMake
 
 "    autocmd BufWritePost *.c,*.cpp make
 "    autocmd QuickFixCmdPost * copen
+augroup END
+
+augroup MyTest
+    autocmd!
+    autocmd FileType c,cpp setlocal commentstring=//\ %s
 augroup END
 
 " highlight current line, but only in active window
