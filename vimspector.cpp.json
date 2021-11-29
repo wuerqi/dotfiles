@@ -1,0 +1,23 @@
+{
+  "configurations": {
+    "vimspector demo": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "type":    "cppdbg",
+        "request": "launch",
+        "program": "build/HELLO",
+        "args": [
+        ],
+        "cwd": "${workspaceRoot}",
+        "environment": [
+        ],
+        "externalConsole": true,
+        "stopAtEntry": true,
+        "MIMode": "gdb",
+        "logging": {
+          "engineLogging": false
+        }
+      }
+    }
+  }
+}
