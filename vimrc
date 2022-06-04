@@ -20,6 +20,10 @@ Plugin 'Valloric/YouCompleteMe'
 " vimspector
 Plugin 'puremourning/vimspector'
 
+" fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+"Plugin 'airblade/vim-rooter'
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -200,6 +204,9 @@ nnoremap <leader>ba :Dispatch! make -C build_arm/<CR>
 nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
 nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "']+1"<CR>
 
+" fzf
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Normal' } }
+
 " gutentags
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
@@ -207,11 +214,12 @@ let g:gutentags_ctags_tagfile = '.tags'
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 
-let g:gutentags_ctags_extra_args  = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args  = ['--fields=+niazS', '--extras=+q']
 "let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 "let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--kinds-c++=+dfghmstuvcnZ', '--fields-c++=+{specialization}{template}{properties}{captures}']
 
+"let g:gutentags_trace = 1
 
 if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')

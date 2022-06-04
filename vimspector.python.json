@@ -1,0 +1,19 @@
+{
+  "configurations": {
+    "pydemo: Launch": {
+      "adapter": "debugpy",
+//      "filetypes": [ "py" ],
+      "configuration": {
+        "name": "pydemo: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "/usr/bin/python3",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "test.py"
+      }
+    }
+  }
+}
