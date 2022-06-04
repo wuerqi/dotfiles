@@ -62,3 +62,7 @@
 	path = vim/plugins/commentary
 	url = https://github.com/tpope/vim-commentary.git
 	ignore = untracked
+[submodule "vim/plugins/vim-highlightedyank"]
+	path = vim/plugins/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank.git
+	ignore = untracked
