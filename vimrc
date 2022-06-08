@@ -102,11 +102,12 @@ set shortmess+=I  	" disable startup message
 set number		" line number
 set relativenumber	" relative line number
 set incsearch       " incremental search (as string is being typed)
-set hlsearch        " highlight search results
+set nohlsearch      " off highlight search results
 set history=8192	" more history
 set noshowmode		" hide mode
 set laststatus=2	" enable status line
 set backspace=indent,eol,start " allow backspacing over everything
+set scrolloff=8     " automatically scroll down when the cursor is near the bottom
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -128,6 +129,8 @@ set mouse+=a        " enable mouse mode (scrolling, selection, etc)
 " Misc configurations
 "---------------------
 
+" The most important one
+inoremap <C-c> <esc>
 
 " unbind keys
 map <C-a> <Nop>
@@ -261,3 +264,4 @@ vnoremap <Down>  <Nop>
 vnoremap <Left>  <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up>    <Nop>
+
