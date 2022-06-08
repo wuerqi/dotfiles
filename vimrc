@@ -24,6 +24,9 @@ Plugin 'puremourning/vimspector'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 "Plugin 'airblade/vim-rooter'
+
+Plugin 'morhetz/gruvbox'
+Plugin 'tmux-plugins/vim-tmux'
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
