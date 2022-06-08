@@ -4,11 +4,11 @@
 	ignore = untracked
 [submodule "zsh/plugins/zsh-completions"]
 	path = zsh/plugins/zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
+	url = https://github.com/zsh-users/zsh-completions.git
 	ignore = untracked
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 	ignore = untracked
 [submodule "vim/plugins/nerdtree"]
 	path = vim/plugins/nerdtree
