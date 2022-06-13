@@ -185,6 +185,7 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 let g:ycm_confirm_extra_conf = 1
 let g:ycm_open_loclist_on_ycm_diags = 1         " Open location list to view diagnostics
 let g:ycm_enable_diagnostic_highlighting = 1    " Highlight regions of diagnostic text
+let g:ycm_auto_hover = ''                       " Disable auto hover. Change it manually (<leader>D)
 
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
@@ -194,7 +195,7 @@ nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
-
+nmap <leader>D   <Plug>(YCMHover)
 
 " Open vim-dispatch window and scroll to bottom
 nnoremap <leader>m :Copen<CR> <bar> G
@@ -214,6 +215,10 @@ nnoremap <silent> [<Space> :<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "'
 
 " fzf
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Normal' } }
+
+" Using Rg instead of vim default search
+nnoremap <leader>/ :Rg<CR>
+nnoremap <leader>F :Files<CR>
 
 " gutentags
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
