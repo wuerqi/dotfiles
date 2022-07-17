@@ -186,9 +186,11 @@ let g:ycm_confirm_extra_conf = 1
 let g:ycm_open_loclist_on_ycm_diags = 1         " Open location list to view diagnostics
 let g:ycm_enable_diagnostic_highlighting = 1    " Highlight regions of diagnostic text
 let g:ycm_auto_hover = ''                       " Disable auto hover. Change it manually (<leader>D)
+let g:ycm_clangd_args = ['--header-insertion=never']    " Disable auto insertion header files
 
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <leader>st :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
