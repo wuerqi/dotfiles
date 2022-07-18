@@ -27,6 +27,8 @@ Plugin 'junegunn/fzf.vim'
 
 Plugin 'morhetz/gruvbox'
 Plugin 'tmux-plugins/vim-tmux'
+
+Plugin 'tpope/vim-dispatch'
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -203,7 +205,7 @@ nmap <leader>D   <Plug>(YCMHover)
 nnoremap <leader>m :Copen<CR> <bar> G
 
 " Build targets
-nnoremap <leader>b :Dispatch! make -C build/<CR>
+nnoremap <leader>b :Dispatch! cmake --build build/ -j<CR>
 
 " Build arm targets
 nnoremap <leader>ba :Dispatch! make -C build_arm/<CR>
