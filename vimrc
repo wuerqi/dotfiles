@@ -58,7 +58,7 @@ augroup END
 
 augroup MyTest
     autocmd!
-    autocmd FileType c,cc,cpp setlocal commentstring=//\ %s
+    autocmd FileType c,cc,cpp setlocal tabstop=2 shiftwidth=2 commentstring=//\ %s
 augroup END
 
 " highlight current line, but only in active window
