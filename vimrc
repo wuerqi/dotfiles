@@ -29,6 +29,12 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'tpope/vim-dispatch'
+
+" Execute shell command without jumping out of the vim window
+Plugin 'preservim/vimux'
+
+" Unified navigation behaviour between vim windows and tmux pane
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -206,12 +212,21 @@ nnoremap <leader>m :Copen<CR> <bar> G
 
 " Build targets
 nnoremap <leader>b :Dispatch! cmake --build build/ -j<CR>
+" Alternative build using vimux (2022.08.21)
+nnoremap <leader>vb :VimuxPromptCommand("make -j")<CR><CR>
 
 " Build arm targets
 nnoremap <leader>ba :Dispatch! make -C build_arm/<CR>
 
 " temp
 " nnoremap <leader>z :Dispatch! /home/rafewu/TEMP/neighbour/run_device.sh<CR>
+
+" Vimspector
+"   Inspect the variable under the cursor
+nnoremap <leader>di <Plug>VimspectorBalloonEval
+"   Show Breakpoints window
+nnoremap <leader>db <Plug>VimspectorBreakpoints
+
 
 " Insert a blank line before or after the current one
 nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "'[-1"<CR>
