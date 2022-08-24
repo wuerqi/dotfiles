@@ -35,6 +35,11 @@ Plugin 'preservim/vimux'
 
 " Unified navigation behaviour between vim windows and tmux pane
 Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'preservim/nerdcommenter'
+
+"Plugin 'prabirshrestha/vim-lsp'
+"Plugin 'jackguo380/vim-lsp-cxx-highlight'
 call vundle#end()
 
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
