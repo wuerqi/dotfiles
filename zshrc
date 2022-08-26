@@ -23,5 +23,6 @@ source ~/.zsh/prompt.zsh
 # External plugins (initialized after)
 source ~/.zsh/plugins_after.zsh
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#eval "$(starship init zsh)"
