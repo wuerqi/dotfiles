@@ -7,14 +7,14 @@ CMAKE_FILE=$SRC_DIR/CMakeLists.template
 VIMSPECTOR_FILE=$SRC_DIR/vimspector.cpp.json
 CPP_FILE=$SRC_DIR/main.cpp
 
-if [ -f $CMAKE_FILE ]; then
+if [ ! -f $CMAKE_FILE ]; then
     echo "Unable to file $CMAKE_FILE in $SRC_DIR"
-    exit -1
+    exit 1
 fi
 
 if [ ! -f $VIMSPECTOR_FILE ]; then
     echo "Unable to file $VIMSPECTOR_FILE in $SRC_DIR"
-    exit -1
+    exit 1
 fi
 
 if [ ! -d $DST_DIR ]; then
