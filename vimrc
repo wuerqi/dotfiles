@@ -38,6 +38,12 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'preservim/nerdcommenter'
 
+" clang-format
+Plugin 'rhysd/vim-clang-format'
+
+" git related
+Plugin 'airblade/vim-gitgutter'
+
 "Plugin 'prabirshrestha/vim-lsp'
 "Plugin 'jackguo380/vim-lsp-cxx-highlight'
 call vundle#end()
@@ -63,8 +69,14 @@ augroup END
 
 augroup MyTest
     autocmd!
-    autocmd FileType c,cc,cpp,h,hpp setlocal tabstop=2 shiftwidth=2 commentstring=//\ %s
+    autocmd FileType c,cc,cpp,cxx,h,hpp setlocal tabstop=2 shiftwidth=2 softtabstop=2 commentstring=//\ %s
 augroup END
+
+"augroup Format
+"    autocmd!
+"    autocmd FileType c,cc,cpp,h,hpp setlocal formatprg=clang-format\ --style=file
+"    autocmd FileType c,cc,cpp,h,hpp setlocal equalprg=clang-format\ --style=file
+"augroup END
 
 " highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
@@ -184,6 +196,10 @@ cnoremap <C-l> <Right>
 "----------------------
 " Plugin configuration
 "----------------------
+
+" vim-clang-format
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_filetypes = ['c', 'cc', 'cpp', 'cxx', 'h', 'hpp']
 
 " NERDTree
 nnoremap <Leader>n :NERDTreeToggle<CR>
