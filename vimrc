@@ -192,6 +192,8 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+" paste behaviour
+vnoremap <leader>p "_dP
 
 "----------------------
 " Plugin configuration
